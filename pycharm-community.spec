@@ -6,6 +6,8 @@
 # there are some python 2 and python 3 scripts so there is no way out to bytecompile them ^_^
 %global __os_install_post %(echo '%{__os_install_post}' | sed -e 's!/usr/lib[^[:space:]]*/brp-python-bytecompile[[:space:]].*$!!g')
 
+%define _rpmfilename %%{NAME}.%%{ARCH}.rpm
+
 %if 0%{?rhel} <= 7
 %bcond_with python3
 %else
